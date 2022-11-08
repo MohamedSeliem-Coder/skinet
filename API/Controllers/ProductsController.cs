@@ -31,6 +31,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(Pagination<ProductToReturnDto>),StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(
             [FromQuery]ProductSpecParams productParams)
         {
